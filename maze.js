@@ -12,6 +12,17 @@ window.onload = function(){
   //     this.setAttribute('class','boundary youlose');
   // });
 
+  for (var i=0; i<b.length; i++){
+    b[i].onmouseover = function()
+    {
+      for (var j=0;j<b.length-1; j++){
+        b[j].setAttribute('class', 'boundary youlose');
+        status.innerHTML = "You Lose!";
+      }
+      loser++;
+    }
+  }
+
   start.onclick = function(){
     for (var i=0; i<b.length; i++){
       b[i].onmouseover = function()
@@ -48,7 +59,7 @@ window.onload = function(){
         }
       }
     }
-
+  }
     end.onmouseover = function(){
       if(loser>0){
         status.innerHTML = "You Lose!";
@@ -56,11 +67,8 @@ window.onload = function(){
       else{
         status.innerHTML = "You Win!";
       }
-    }
+    
 
   }
 
-  end.onmouseover = function(){
-    status.innerHTML = "Nice try, Press \"S\" to Start";
-  }
-}
+ }
